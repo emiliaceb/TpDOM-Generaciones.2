@@ -17,7 +17,7 @@ class Persona{
     #altura;
     #añoNacimiento;
 
-    constructor(nombre,edad,sexo,peso,altura){
+    constructor(nombre,edad,sexo,peso,altura,añoDeNacimiento){
         this.#nombre = nombre;
         this.#edad = edad;
         this.#sexo = sexo;
@@ -110,14 +110,7 @@ class Persona{
     }
 }
 
-// const persona = new Persona(nombre,edad,sexo,peso,altura,añoDeNacimiento);
-// persona.mostrarGeneracion();
-// persona.esMayor();
-// persona.generarDNI();
-// persona.mostrarDatos();
-
-
-
+ 
 const datosPersona = (e) => {
  e.preventDefault();
  console.log('***** DATOS DE LA PERSONA*****')
@@ -133,10 +126,43 @@ const datosPersona = (e) => {
  console.log('Altura:',altura);
  const nacimiento = document.querySelector('#año').value;
  console.log('Año de nacimiento:', nacimiento);
-
-//  const persona = new Persona(nombre,edad,sexo,peso,altura,nacimiento);
-//  const dni = persona.generarDNI();
-//  console.log(dni);
+ //creo objeto persona
+ const persona = new Persona(nombre,edad,sexo,peso,altura,nacimiento);
+ console.log(persona);
+ const dni = persona.generarDNI();
+ console.log('DNI:',dni);
+ formulario.style.display = 'none';
+ //obtener el div
+ const div= document.querySelectorAll('div');
+ console.log(div);
+ //el que necesito es 2 y el 10
+ const articuloDatos = document.createElement('article');
+ div[2].insertBefore(articuloDatos,div[10])
+ const newH2= document.createElement('h2');
+ newH2.textContent= 'Datos de la Persona'
+ articuloDatos.appendChild(newH2);
+ const newNombre = document.createElement('p');
+ newNombre.textContent= nombre;
+ const newEdad = document.createElement('p');
+ newEdad.innerHTML= 'Edad: '+ edad;
+ const newSexo = document.createElement('p');
+ newSexo.textContent=sexo;
+ const newPeso = document.createElement('p');
+ newPeso.innerHTML= 'Peso: '+peso+'Kg';
+ const newAltura = document.createElement('p');
+ newAltura.innerHTML= 'Altura: '+altura+'Cm';
+ const newAnio = document.createElement('p');
+ newAnio.textContent= 'Año de nacimiento',nacimiento;
+ const newDni = document.createElement('p');
+ newDni.textContent= dni;
+ //Agrego todos los hijos
+ articuloDatos.appendChild(newNombre);
+ articuloDatos.appendChild(newEdad);
+ articuloDatos.appendChild(newSexo);
+ articuloDatos.appendChild(newPeso);
+ articuloDatos.appendChild(newAltura);
+ articuloDatos.appendChild(newAnio);
+ articuloDatos.appendChild(newDni);
 }
 
 
