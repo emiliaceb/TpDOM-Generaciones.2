@@ -71,26 +71,26 @@ class Persona{
 
     mostrarGeneracion(){
         if(this.añoDeNacimiento >= 1994 && this.añoDeNacimiento <=2010){
-            document.write(`<p>${this.nombre} pertenece a la generación Z, y su razgo caracteristico es la irreverencia 😋</p>`)
+            alert(`${this.nombre} pertenece a la generación Z, y su razgo caracteristico es la irreverencia 😋`)
         }
         if(this.añoDeNacimiento >= 1981 && this.añoDeNacimiento <=1993){
-            document.write(`<p>${this.nombre} pertenece a la generación Y (Millennials), y su razgo caracteristico es la frustración 😥</p>`)
+            alert(`${this.nombre} pertenece a la generación Y (Millennials), y su razgo caracteristico es la frustración 😥`)
         }
         if(this.añoDeNacimiento >= 1969 && this.añoDeNacimiento <=1980){
-            document.write(`<p>${this.nombre} pertenece a la generación X, y su razgo caracteristico es la Obsesión por el exito 😎</p>`)
+            alert(`${this.nombre} pertenece a la generación X, y su razgo caracteristico es la Obsesión por el exito 😎`)
         }
         if(this.añoDeNacimiento >= 1949 && this.añoDeNacimiento <=1968){
-            document.write(`<p>${this.nombre} pertenece a la generación Baby Boom, y su razgo caracteristico es la Ambición 🤑</p>`)
+            alert(`${this.nombre} pertenece a la generación Baby Boom, y su razgo caracteristico es la Ambición 🤑`)
         }
         if(this.añoDeNacimiento >= 1930 && this.añoDeNacimiento <=1948){
-            document.write(`<p>${this.nombre} pertenece a la generación Silent, y su razgo caracteristico es la Austeridad 😐</p>`)
+            alert(`${this.nombre} pertenece a la generación Silent, y su razgo caracteristico es la Austeridad 😐`)
         }
     }
     esMayor(){
         if(this.edad >= 18){
-            document.write(`<p>${this.nombre} es mayor de edad</p>`);
+            alert(`${this.nombre} es mayor de edad`);
         }else{
-            document.write(`<p>${this.nombre} es menor de edad</p>`);
+            alert(`${this.nombre} es menor de edad`);
         }
     }
     mostrarDatos(){
@@ -163,9 +163,18 @@ const datosPersona = (e) => {
  articuloDatos.appendChild(newAltura);
  articuloDatos.appendChild(newAnio);
  articuloDatos.appendChild(newDni);
+
+ const botonGeneraciones = document.getElementById('mostrarGeneracion');
+ mostrarGeneracion.addEventListener('click',()=>{persona.mostrarGeneracion()});
+
+ const botonMayor = document.getElementById('mayor');
+ mayor.addEventListener('click',()=>{persona.esMayor()});
+ 
 }
 
 
 //Obtener el formulario
 const formulario = document.querySelector('form');
 formulario.addEventListener('submit',datosPersona);
+
+
