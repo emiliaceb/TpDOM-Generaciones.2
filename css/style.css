@@ -1,11 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Calistoga&family=Concert+One&family=Kalnia+Glaze:wght@100..700&family=Playwrite+IS:wght@100..400&display=swap');
 body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: white;
 }
 main{
     flex-grow: 1;
 }
 a{
     text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+nav, footer{
+    background-color: #025996;
+}
+h1 {
+    font-family: "Calistoga", serif;
+    font-weight: 400;
+    font-style: normal;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+footer{
+    color: white;
+    font-size: 18px;
+    padding-top: 7px;
 }
